@@ -1,1 +1,1 @@
-web: cd busy && gunicorn3 busy.wsgi
+web: cd busy && gunicorn busy.wsgi
