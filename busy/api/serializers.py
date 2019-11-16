@@ -14,9 +14,12 @@ class BusLocSerializer(serializers.ModelSerializer):
         read_only_fields=('bno',)
 
 class BusSerializer(serializers.ModelSerializer):
+    lat = serializers.FloatField(source='get_lat')
+    long = serializers.FloatField(source='get_long')
     class Meta:
         model=Bus
         fields='__all__'
+        read_only_fields=('lat', 'long',)
 
 class BPointSerializer(serializers.ModelSerializer):
     class Meta:

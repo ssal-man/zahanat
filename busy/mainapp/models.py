@@ -25,6 +25,12 @@ class Bus(models.Model):
     route = models.ForeignKey(to=Route, on_delete=models.CASCADE)
     status = models.IntegerField()
 
+    def get_lat(self):
+        return self.busloc.lat
+
+    def get_long(self):
+        return self.busloc.long
+
     def __str__(self):
         return f"{self.bno}"
 
