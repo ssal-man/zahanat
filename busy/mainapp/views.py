@@ -10,8 +10,16 @@ def index(request):
 def buslist(request):
     if request.method == "GET": 
         context = {'buses' : Bus.objects.all()}
-        return(render(request, 'mainapp/base.html', context))
+        return(render(request, 'mainapp/buslist.html', context))
     elif request.method == "POST":
-        context = {'test' : 'This is post request'}
-        return(render(request, 'mainapp/base.html', context))
+        context = {}
+        return(render(request, 'mainapp/buslist.html', context))
+    
+
+def details(request, bus, bpoint):
+    context = {
+        'bus' : bus,
+        'bpoint' : bpoint
+    }
+    return(render(request, 'mainapp/details.html', context))
     

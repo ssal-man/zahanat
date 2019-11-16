@@ -1,17 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html style="height: 666px;">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
-</head>
-<body>
-    Test
-    {% for bus in buses %}
-        <h1>{{ bus }}</h>
-    {% endfor %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>base</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href={% static 'assets/css/BS4-BetterNav.css' %} >
+    <link rel="stylesheet" href={% static 'assets/css/Footer-Basic.css' %}>
+    <link rel="stylesheet" href={% static 'assets/css/styles.css' %}>
+    {% block css %}
     
-    {{ test }}
+    {% endblock css %}
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md bg-danger border rounded">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="padding: 10px;width: 122px;margin: -3px;height: 49px;font-family: Pacifico, cursive;letter-spacing: 3px;"><strong>BUSy</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="font-family: Acme, sans-serif;">Find Your Bus</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Acme, sans-serif;">About us</a></li>
+                    <li class="nav-item" role="presentation"></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div>
+    {% block main %}
+        
+    {% endblock main %}
+    </div>
+    <!-- Start: Footer Basic -->
+    <div class="footer-basic">
+        <footer>
+            <div class="social" style="padding: 2px;"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="fa fa-google-plus"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <p class="copyright" style="height: 18px;padding: -4px;font-family: Hind, sans-serif;">Team Zahanat © BUSy-2019</p>
+        </footer>
+    </div>
+    <!-- End: Footer Basic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src={% static 'assets/js/BS4-BetterNav.js' %}></script>
+    {% block scripts %}
+    
+    {% endblock scripts %}
 </body>
+
 </html>
