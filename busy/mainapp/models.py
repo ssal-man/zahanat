@@ -32,6 +32,8 @@ class BusLoc(models.Model):
     bus = models.OneToOneField(to=Bus, on_delete=models.CASCADE)
     lat = models.FloatField(default=0.0)
     long = models.FloatField(default=0.0)
+    def get_bno(self):
+        return f"{self.bus.bno}"
 
     def __str__(self):
         return f"{self.bus.bno}"

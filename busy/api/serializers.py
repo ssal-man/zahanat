@@ -7,9 +7,11 @@ class RouteSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 class BusLocSerializer(serializers.ModelSerializer):
+    bno=serializers.CharField(source='get_bno')
     class Meta:
         model=BusLoc
         fields='__all__'
+        read_only_fields=('bno',)
 
 class BusSerializer(serializers.ModelSerializer):
     class Meta:
